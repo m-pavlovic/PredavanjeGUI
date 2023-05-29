@@ -14,11 +14,20 @@ public class ViewPanel extends JPanel {
 
     private void initPanelComps() {
         textArea = new JTextArea();
+        textArea.setEditable(false);
     }
 
     private void layoutComps() {
         setLayout(new BorderLayout());
         add(textArea, BorderLayout.CENTER);
+    }
+
+    public void setTextOnTextArea(String someText) {
+        textArea.append(someText + "\n");
+    }
+
+    public void clearAll() {
+        textArea.setText("");
     }
 
 
